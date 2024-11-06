@@ -1,5 +1,5 @@
 {% set name = "ecoinvent_interface" %}
-{% set version = "2.4.1" %}
+{% set version = "2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ecoinvent_interface-{{ version }}.tar.gz
-  sha256: 0075f93ff7125d77e3ad2c8d046b297069d18dac83261230589b47d0c1ab0fc7
+  sha256: 12cea215b9ad59312f88912b1d80abda16246cbebf1c295675e397349a1e1310
 
 build:
   noarch: python
