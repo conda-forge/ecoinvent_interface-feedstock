@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ecoinvent_interface-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ecoinvent_interface-{{ version }}.tar.gz
   sha256: 0075f93ff7125d77e3ad2c8d046b297069d18dac83261230589b47d0c1ab0fc7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=68.0
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - lxml
     - platformdirs
     - py7zr
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/brightway-lca/ecoinvent_interface/
